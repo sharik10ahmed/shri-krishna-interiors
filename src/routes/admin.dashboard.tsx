@@ -419,7 +419,7 @@ function ServiceModal({
 const emptyProject = (): Project => ({
   id: `project-${uid()}`,
   title: "New Project",
-  category: PROJECT_CATEGORIES[0],
+  category: PROJECT_CATEGORIES[0] ?? "Modular Kitchens",
   location: "",
   description: "",
   image: "project01",
@@ -690,8 +690,11 @@ function FaqPanel() {
   function move(index: number, dir: -1 | 1) {
     const next = [...list];
     const target = index + dir;
-    if (target < 0 || target >= next.length) return;
-    [next[index], next[target]] = [next[target], next[index]];
+    const a = next[index];
+    const b = next[target];
+    if (!a || !b) return;
+    next[index] = b;
+    next[target] = a;
     update({ faqs: next });
   }
 
