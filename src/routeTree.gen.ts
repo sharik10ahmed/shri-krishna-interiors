@@ -10,33 +10,167 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as TestimonialsRouteImport } from './routes/testimonials'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
+import { Route as ProjectsIdRouteImport } from './routes/projects.$id'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestimonialsRoute = TestimonialsRouteImport.update({
+  id: '/testimonials',
+  path: '/testimonials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsIdRoute = ProjectsIdRouteImport.update({
+  id: '/projects/$id',
+  path: '/projects/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/testimonials': typeof TestimonialsRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/projects/$id': typeof ProjectsIdRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/projects/': typeof ProjectsIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/testimonials': typeof TestimonialsRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/projects/$id': typeof ProjectsIdRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/projects': typeof ProjectsIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/testimonials': typeof TestimonialsRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/projects/$id': typeof ProjectsIdRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/projects/': typeof ProjectsIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/testimonials'
+    | '/admin/dashboard'
+    | '/admin/login'
+    | '/projects/$id'
+    | '/services/$slug'
+    | '/projects/'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/testimonials'
+    | '/admin/dashboard'
+    | '/admin/login'
+    | '/projects/$id'
+    | '/services/$slug'
+    | '/projects'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/testimonials'
+    | '/admin/dashboard'
+    | '/admin/login'
+    | '/projects/$id'
+    | '/services/$slug'
+    | '/projects/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  TestimonialsRoute: typeof TestimonialsRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminLoginRoute: typeof AdminLoginRoute
+  ProjectsIdRoute: typeof ProjectsIdRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
+  ProjectsIndexRoute: typeof ProjectsIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +182,91 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/testimonials': {
+      id: '/testimonials'
+      path: '/testimonials'
+      fullPath: '/testimonials'
+      preLoaderRoute: typeof TestimonialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/': {
+      id: '/projects/'
+      path: '/projects'
+      fullPath: '/projects/'
+      preLoaderRoute: typeof ProjectsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/$id': {
+      id: '/projects/$id'
+      path: '/projects/$id'
+      fullPath: '/projects/$id'
+      preLoaderRoute: typeof ProjectsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/services/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  TestimonialsRoute: TestimonialsRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminLoginRoute: AdminLoginRoute,
+  ProjectsIdRoute: ProjectsIdRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
+  ProjectsIndexRoute: ProjectsIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
