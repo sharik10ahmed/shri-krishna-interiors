@@ -45,8 +45,8 @@ function AdminLogin() {
     <div className="grid min-h-screen font-sans lg:grid-cols-2">
       <div className="relative hidden lg:block">
         <img
-          src={images.project02b}
-          alt="Premium kitchen detail"
+          src={images.adminLogin}
+          alt="Walnut cabinet detail with brass handle"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-charcoal/70" />

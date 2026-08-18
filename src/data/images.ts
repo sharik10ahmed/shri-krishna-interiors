@@ -22,6 +22,7 @@ import project06 from "@/assets/project-06.jpg";
 import project06b from "@/assets/project-06-b.jpg";
 import ctaBanner from "@/assets/cta-banner.jpg";
 import processPlanning from "@/assets/process-planning.jpg";
+import adminLogin from "@/assets/admin-login.jpg";
 
 export const images = {
   heroKitchen,
@@ -46,6 +47,7 @@ export const images = {
   project06b,
   ctaBanner,
   processPlanning,
+  adminLogin,
 } as const;
 
 export type ImageKey = keyof typeof images;
